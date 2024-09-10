@@ -82,11 +82,12 @@ curl -X POST https://your-webhook-endpoint.com \
 5. Tokenization
 For increased security, you can tokenize customer payment information to reuse it in future transactions without storing sensitive data.
 
-Error Handling
+# Error Handling
+
 The API uses standard HTTP status codes to indicate success or failure. For example:
 
-200 OK – Success
-400 Bad Request – Invalid request parameters
-401 Unauthorized – Invalid API key
-500 Internal Server Error – Something went wrong on our end
+- 200 OK – Success
+- 400 Bad Request – Invalid request parameters
+- 401 Unauthorized – Invalid API key
+- 500 Internal Server Error – Something went wrong on our end
 
