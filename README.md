@@ -1,43 +1,43 @@
-# Payment Gateway API
+# 支付网关 API
 
-## Introduction
+## 简介
 
-Welcome to the **Payment Gateway API**. This API allows merchants to securely integrate payment processing into their platforms. With support for multiple payment methods, currencies, and easy integration, our API enables seamless transactions for online businesses of all sizes.
+欢迎使用 **支付网关 API**。此 API 允许商户将支付处理功能安全地集成到其平台中。通过支持多种支付方式、货币和简便的集成，我们的 API 为各种规模的在线业务提供了无缝的交易体验。
 
-## Features
+## 功能
 
-- **Multiple Payment Methods**: Support for credit cards, debit cards, and various online payment methods like PayPal, Apple Pay, and Google Pay.
-- **Secure Transactions**: End-to-end encryption, PCI-DSS compliance, and two-factor authentication (2FA) for secure payment processing.
-- **Multi-Currency Support**: Accept payments in various currencies with automatic conversion.
-- **Webhooks for Notifications**: Receive real-time updates on the status of transactions.
-- **Refund and Chargeback Handling**: Process refunds and handle chargebacks with ease.
-- **Customizable Payment Pages**: Fully customizable payment pages for a smooth customer experience.
-- **Sandbox Environment**: Test the integration in a development environment before going live.
+- **多种支付方式**：支持信用卡、借记卡以及多种在线支付方式，如 PayPal、Apple Pay 和 Google Pay。
+- **安全交易**：端到端加密、符合 PCI-DSS 标准，并支持双因素身份验证 (2FA) 以确保支付处理安全。
+- **多货币支持**：支持多种货币的支付，并提供自动转换。
+- **实时通知的 Webhook**：实时接收交易状态更新。
+- **退款和拒付处理**：轻松处理退款和拒付。
+- **可定制的支付页面**：完全可定制的支付页面，提供顺畅的客户体验。
+- **沙盒环境**：在开发环境中测试集成，确保上线前无误。
 
-## Getting Started
+## 入门指南
 
-### Prerequisites
+### 前提条件
 
-- [API Key](#getting-your-api-key): You’ll need to sign up and get an API key from our platform.
-- HTTP Client (e.g., Postman, cURL) or SDK support for [Golang](https://golang.org), [Node.js](https://nodejs.org), [Python](https://www.python.org), etc.
+- [API 密钥](#获取您的-api-密钥)：您需要注册并从我们的平台获取 API 密钥。
+- HTTP 客户端（例如 Postman、cURL）或支持 [Golang](https://golang.org)、[Node.js](https://nodejs.org)、[Python](https://www.python.org) 等的 SDK。
 
-### Installation
+### 安装
 
-1. Clone the repository:
-```bash
+1. 克隆仓库：
+   ```bash
    git clone https://github.com/your-repo/payment-gateway-api.git
    cd payment-gateway-api
 
-   go mod download  # For Go
-   npm install      # For Node.js
-   pip install -r requirements.txt  # For Python
+   go mod download  # Golang 使用
+   npm install      # Node.js 使用
+   pip install -r requirements.txt  # Python 使用
 ```
 
-Getting Your API Key
-To start using the API, you'll need to obtain an API key from the developer portal.
+获取您的 API 密钥
+要开始使用 API，您需要从 开发者门户 获取 API 密钥。
 
-Basic Usage Example
-Here’s an example of making a simple payment request:
+基本用法示例
+下面是一个简单的支付请求示例：
 
 ```bash
 curl -X POST https://api.paymentgateway.com/v1/payments \
@@ -56,18 +56,18 @@ curl -X POST https://api.paymentgateway.com/v1/payments \
   }'
 ```
 
-Advanced Features
-1. Custom Payment Pages
-The API allows you to create fully customizable payment pages for your customers. You can modify the look and feel of the page to match your brand.
+高级功能
+1. 自定义支付页面
+API 允许您为客户创建完全可定制的支付页面。您可以修改页面的外观以符合您的品牌。
 
-2. Fraud Detection & Prevention
-We use machine learning algorithms to detect and prevent fraudulent activities. You can access additional data points to make informed decisions.
+2. 欺诈检测与防范
+我们使用机器学习算法来检测和防止欺诈活动。您可以访问额外的数据点来做出明智的决策。
 
-3. Multi-Currency & Auto-Conversion
-With our multi-currency support, you can easily accept payments from customers around the world, and the API automatically converts the currency at the current exchange rate.
+3. 多货币和自动转换
+通过我们的多货币支持，您可以轻松接受来自世界各地客户的付款，并且 API 会根据当前汇率自动转换货币。
 
-4. Handling Webhooks
-Set up a webhook listener to handle events like payment_completed, payment_failed, and refund_processed. Example setup:
+4. 处理 Webhook
+设置 Webhook 监听器以处理 payment_completed、payment_failed 和 refund_processed 等事件。示例设置：
 
 ```bash
 curl -X POST https://your-webhook-endpoint.com \
@@ -80,14 +80,13 @@ curl -X POST https://your-webhook-endpoint.com \
    ```
 
 5. Tokenization
-For increased security, you can tokenize customer payment information to reuse it in future transactions without storing sensitive data.
+# 令牌化
+为了增强安全性，您可以对客户支付信息进行令牌化，以便在未来交易中重复使用，而无需存储敏感数据。
 
-# Error Handling
+# 错误处理
+API 使用标准的 HTTP 状态码来指示成功或失败。例如：
 
-The API uses standard HTTP status codes to indicate success or failure. For example:
-
-- 200 OK – Success
-- 400 Bad Request – Invalid request parameters
-- 401 Unauthorized – Invalid API key
-- 500 Internal Server Error – Something went wrong on our end
-
+- 200 OK – 请求成功
+- 400 Bad Request – 请求参数无效
+- 401 Unauthorized – API 密钥无效
+- 500 Internal Server Error – 服务器内部错误
